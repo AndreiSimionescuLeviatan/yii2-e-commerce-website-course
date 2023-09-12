@@ -1,0 +1,7 @@
+#ordersTable td {
+    white-space: nowrap;
+}
+
+#ordersTable th a.asc:after{
+    content:" "
+}
