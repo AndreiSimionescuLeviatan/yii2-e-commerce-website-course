@@ -39,18 +39,19 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
+
         ['label' => 'Cart <span id="cart-quantity" class="badge bg-danger">'.$cartItemCount.'</span>', 
         'url' => ['/cart/index'],
         'encode'=>false
         ],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => Yii::t('app/','Signup'), 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => Yii::t('app','Login'), 'url' => ['/site/login']];
     }
     else {
         $menuItems[]=[
-            'label'=>Yii::$app->user->identity->getDisplayName(),
+            'label'=>Yii::t('app','Welcome {name}',['name'=>Yii::$app->user->identity->getDisplayname()]),
             // 'dropDownOptions'=>[
             //     'class'=>'dropdown-menu-right'
             // ],

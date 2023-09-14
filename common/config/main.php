@@ -1,5 +1,7 @@
 <?php
 return [
+    'language'=>'de-DE',
+    'sourceLanguage'=>'en-US',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -15,4 +17,14 @@ return [
 ////         'datetimeFormat'=>'php:d/m/Y H:i'
 //
 //     ]
+    'i18n' => [
+        'translations' => [
+            'app*' => [
+                'class' => 'yii\i18n\PhpMessageSource',
+                'basePath' => '@common/messages',
+
+            ],
+        ],
+    ],
+
 ];
